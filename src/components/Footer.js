@@ -1,11 +1,19 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+import logo from '../img/logo.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab, faFacebook, faTwitter, faPinterest, faMedium, faInstagram, faGooglePlusG } from "@fortawesome/free-brands-svg-icons"
+
+library.add(fab, faFacebook, faTwitter, faPinterest, faMedium, faInstagram, faGooglePlusG)
+
+const fbIcon = <FontAwesomeIcon style={{ color: '#4267B2', 'margin': '0px 20px 10px 0px', 'width': '35px' }} icon={faFacebook} />
+const twitterIcon = <FontAwesomeIcon style={{ color: '#1DA1F2', 'margin': '0px 20px 10px 0px', 'width': '35px' }} icon={faTwitter} />
+const pinIcon = <FontAwesomeIcon style={{ color: '#E60023', 'margin': '0px 20px 10px 0px', 'width': '35px' }} icon={faPinterest} />
+const mediumIcon = <FontAwesomeIcon style={{ color: 'white', 'margin': '0px 20px 10px 0px', 'fontSize': '25px', 'width': '40px' }} className="googleIcon" icon={faMedium} />
+const googleIcon = <FontAwesomeIcon style={{ color: '#db4a39', 'margin': '0px 20px 10px 0px', 'fontSize': '25px', 'width': '40px' }} className="googleIcon" icon={faGooglePlusG} />
+const instaIcon = <FontAwesomeIcon style={{ color: '#833AB4', 'margin': '0px 20px 10px 0px', 'width': '35px' }} icon={faInstagram} />
 
 const Footer = class extends React.Component {
   render() {
@@ -18,35 +26,108 @@ const Footer = class extends React.Component {
             style={{ width: '14em', height: '10em' }}
           />
         </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
+        {/* <> */}
+        {/* <div stYYyle={{ marginTop: '5px', textAlign: 'center', marginBottom: '5px' }} >
+          <a title="facebook" target="_blank" href="https://facebook.com">
+            {fbIcon}
+          </a>
+          <a title="twitter" target="_blank" href="https://twitter.com">
+            {twitterIcon}
+          </a>
+          <a title="instagram" target="_blank" href="https://instagram.com">
+            {instaIcon}
+          </a>
+
+          <a title="googlePlus" target="_blank" href="https://google.com">
+            {googleIcon}
+          </a>
+
+          <a title="pinterest" target="_blank" href="https://pinterest.com">
+            {pinIcon}
+          </a>
+        </div> */}
+        {/* </> */}
+        <div className="content has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">
             <div style={{ maxWidth: '100vw' }} className="columns">
-              <div className="column is-4">
+
+              <div style={{ paddingTop: '0px' }} className="column is-4">
                 <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
+                  {/* <div style={{ marginLeft: '2em', paddingTop: '0px' }} className="column is-4"> */}
+                  <section style={{ marginLeft: '2em', padding: '0.5em 0.75em' }} className="menu">
+
+                    <a title="facebook" target="_blank" href="https://facebook.com">
+                      {fbIcon}
+                    </a>
+                    <a title="twitter" target="_blank" href="https://twitter.com">
+                      {twitterIcon}
+                    </a>
+                    <a title="instagram" target="_blank" href="https://instagram.com">
+                      {instaIcon}
+                    </a>
+                    <a title="googlePlus" target="_blank" href="https://medium.com">
+                      {mediumIcon}
+                    </a>
+
+                    <a title="googlePlus" target="_blank" href="mailto:jeffreyyourman@gmail.com">
+                      {googleIcon}
+                    </a>
+
+                    <a title="pinterest" target="_blank" href="https://pinterest.com">
+                      {pinIcon}
+                    </a>
+                  </section>
+                  {/* </div> */}
+                  <ul style={{ marginTop: '0px' }} className="menu-list">
+                    <li className="linksLiFooter">
+                      <Link to="/" className="navbar-item footerNavbarItem">
                         Home
                       </Link>
                     </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
+                    <li className="linksLiFooter">
+                      <Link className="navbar-item footerNavbarItem" to="/about">
                         About
                       </Link>
                     </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
+                    {/* <li className="linksLiFooter">
+                      <Link className="navbar-item footerNavbarItem" to="/products">
                         Products
                       </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
+                    </li> */}
+                    {/* <li className="linksLiFooter">
+                      <Link className="navbar-item footerNavbarItem" to="/contact/examples">
                         Form Examples
                       </Link>
-                    </li>
-                    <li>
+                    </li> */}
+                    {/* <li className="linksLiFooter">
                       <a
-                        className="navbar-item"
+                        className="navbar-item footerNavbarItem"
+                        href="/admin/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Admin
+                      </a>
+                    </li> */}
+                  </ul>
+                </section>
+              </div>
+              <div style={{ paddingTop: '0px' }} className="column is-4">
+                <section className="menu">
+                  <ul style={{ marginTop: '0px' }} className="menu-list">
+                    {/* <li className="linksLiFooter">
+                      <Link className="navbar-item footerNavbarItem" to="/blog">
+                        Latest Stories footer
+                      </Link>
+                    </li> */}
+                    <li className="linksLiFooter">
+                      <Link className="navbar-item footerNavbarItem" to="/contact">
+                        Contact
+                      </Link>
+                    </li>
+                    <li className="linksLiFooter">
+                      <a
+                        className="navbar-item footerNavbarItem"
                         href="/admin/"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -57,52 +138,17 @@ const Footer = class extends React.Component {
                   </ul>
                 </section>
               </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
+              <div style={{ marginLeft: '2em', paddingTop: '0px' }} className="column is-4">
+                <section style={{ padding: '0.5em 0.75em' }} className="menu">
+                  <h3 style={{ color: 'whitesmoke' }}>About us</h3>
+                  <p>
+                    this is the about us section this is the about us section
+                    this is the about us section this is the about us section
+                    this is the about us section this is the about us section
+                    this is the about us section this is the about us section
+                    this is the about us section this is the about us section
+                  </p>
                 </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
               </div>
             </div>
           </div>
