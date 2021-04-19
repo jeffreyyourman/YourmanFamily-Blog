@@ -17,11 +17,11 @@ class BlogRoll extends React.Component {
     this.getSearches = this.getSearches.bind(this);
   }
   getSearchVal(event) {
-    
+    console.log('event', event.target.value)
     this.setState({ blogSearchValue: event.target.value })
   }
   getSearches(keyword, data) {
-    
+
     var newStr = data.filter((lowerme) => {
       const element = lowerme;
       let title = element.node.frontmatter.title
@@ -39,8 +39,9 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
     let tags = []
 
-    console.log('posts',posts);
-    
+    console.log('posts', posts);
+    console.log('this.state.searchedArr', this.state.searchedArr);
+
     posts.forEach((post) => {
       if (post.node.frontmatter.tags) {
         post.node.frontmatter.tags.forEach(element => {
@@ -55,7 +56,7 @@ class BlogRoll extends React.Component {
         <div className="column is-9" style={{ textAlign: 'center', paddingTop: '0px' }}>
           {posts &&
             posts.map(({ node: post }) => {
-              
+
               return <div className="column box cardColumnContainer is-desktop is-mobile" key={post.id}>
                 <div className="cardContainer">
                   <div className="headerContainer">
@@ -107,9 +108,30 @@ class BlogRoll extends React.Component {
             <div className="rightSideSection box blogSection">
 
               <div className="column rightSideSectionColumn" style={{ 'paddingRight': '0px' }}>
-                <div >
-                  <input className="input" type="text" placeholder="Search blogs" />
+                <div class="field has-addons">
+                  <div class="control">
+                    <input onChange={this.getSearchVal} className="input is-medium" type="text" placeholder="Search blogs" />
+
+                    {/* <input class="input" type="text" placeholder="Find a repository" /> */}
+                  </div>
+                  <div class="control">
+                    <button className="button is-info inputsearchBtn"
+                      onClick={() => {
+                        this.getSearches(this.state.blogSearchValue, posts)
+                        this.setState({ blogSearchValue: "" })
+                      }}>
+                      {searchIcon}
+                    </button>
+                    {/* <a class="button is-info">
+                      Search
+                     </a> */}
+                  </div>
                 </div>
+                {/* <input onChange={this.getSearchVal} className="input is-medium" type="text" placeholder="Search blogs" /> */}
+
+                {/* <div >
+                  <input onChange={this.getSearchVal} className="input" type="text" placeholder="Search blogs" />
+                </div> */}
               </div>
               <h3>Newest</h3>
               {!this.state.searchedArr ? (
@@ -150,7 +172,7 @@ class BlogRoll extends React.Component {
               <ul className="taglist">
                 {['ad1', 'ad2', 'ad3'] ? ['ad1', 'ad2', 'ad3'].map((tag, index) => (
                   <li key={index + 1000} className="allTags">
-                      {tag.padEnd(100, ' ')}
+                    {tag.padEnd(100, ' ')}
                   </li>
                 )) : <p>No ads found</p>}
               </ul>
