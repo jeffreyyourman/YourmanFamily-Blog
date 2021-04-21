@@ -5,6 +5,7 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { kebabCase } from 'lodash'
+// import RightSideSection from './RightSideSection';
 
 
 const searchIcon = <FontAwesomeIcon icon={faSearch} />
@@ -104,7 +105,7 @@ class BlogRoll extends React.Component {
             })}
         </div>
         <div className="column rightSideSectionColumn">
-          <div className="">
+          
             <div className="rightSideSection box blogSection">
 
               <div className="column rightSideSectionColumn" style={{ 'paddingRight': '0px' }}>
@@ -122,16 +123,8 @@ class BlogRoll extends React.Component {
                       }}>
                       {searchIcon}
                     </button>
-                    {/* <a class="button is-info">
-                      Search
-                     </a> */}
                   </div>
                 </div>
-                {/* <input onChange={this.getSearchVal} className="input is-medium" type="text" placeholder="Search blogs" /> */}
-
-                {/* <div >
-                  <input onChange={this.getSearchVal} className="input" type="text" placeholder="Search blogs" />
-                </div> */}
               </div>
               <h3>Newest</h3>
               {!this.state.searchedArr ? (
@@ -152,7 +145,6 @@ class BlogRoll extends React.Component {
                 </>
               )) : <p>No blogs found</p>}
             </div>
-            {/* <hr /> */}
             <div className="rightSideSection box tagSection">
               <h3>Search by Tags:</h3>
               <ul className="taglist">
@@ -177,8 +169,18 @@ class BlogRoll extends React.Component {
                 )) : <p>No ads found</p>}
               </ul>
             </div>
-          </div>
+          
         </div>
+
+
+
+        {/* <RightSideSection posts
+this.state.blogSearchValue
+getSearchVal()
+this.getSearches(this.state.blogSearchValue, posts)
+this.setState({ blogSearchValue: "" })
+this.state.searchedArr/> */}
+
       </div>
     )
   }
