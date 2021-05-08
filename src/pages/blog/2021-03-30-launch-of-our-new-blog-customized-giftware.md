@@ -14,5 +14,5 @@ tags:
 mytest:
   - motherOfBrideTips
 ---
-We are excited to bring you the launch of our new blog starting on May 15, 2021! 
-The content of the blog will be tips on planning your wedding and personalized giftware- Many of our tips will include making your own personalized giftware, signage and guest favors with the help of our design team and links to our favorite designer sites. We look forward to make your personalized giftware that special touch during holidays and special events.
+We are super excited to bring you the launch of our new blog starting on May 15, 2021! 
+The content of the blog will be tips on planning your wedding and personalized giftware- Many of our tips will include making your own personalized giftware, signage and guest favors with the help of our design team and links to our favorite designer sites. We look forward to make your personalized giftware that special touch during holidays and special events
