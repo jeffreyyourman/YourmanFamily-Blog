@@ -44,6 +44,7 @@ export const IndexPageTemplate = ({
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
+            textAlign: 'center'
           }}
         >
           {title} 
@@ -98,7 +99,7 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div> */}
-                <div className="column" >
+                {/* <div className="column" >
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories index page
                   </h3>
@@ -108,7 +109,7 @@ export const IndexPageTemplate = ({
                       Search all blogs
                     </Link>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
