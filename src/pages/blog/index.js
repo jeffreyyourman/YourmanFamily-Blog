@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab, faFacebook, faTwitter, faPinterest, faMedium, faInstagram, faGooglePlusG } from "@fortawesome/free-brands-svg-icons"
 // import { faCheckSquare, faTable, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import Navbar from '../../components/Navbar';
 
 library.add(fab, faFacebook, faTwitter, faPinterest, faMedium, faInstagram, faGooglePlusG)
 const fbIcon = <FontAwesomeIcon style={{ color: '#4267B2', 'margin': '0px 20px 10px 0px', 'fontSize': '25px', 'width': '40px' }} icon={faFacebook} />
@@ -21,22 +22,25 @@ export default class BlogIndexPage extends React.Component {
     return (
       <Layout>
         <div
-          className="full-width-image-container margin-top-0"
+          className="full-width-image-container-toplevel margin-top-0"
           style={{
             backgroundImage: `url('/img/blog-index.jpg')`,
           }}
         >
-          <h1
-            className="has-text-weight-bold is-size-1"
-            style={{
-              boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-              backgroundColor: '#f40',
-              color: 'white',
-              padding: '1rem',
-            }}
-          >
-            Our Creative Stories
-          </h1>
+          <Navbar />
+          <div className="full-width-image-container margin-top-0">
+            <h1
+              className="has-text-weight-bold is-size-1"
+              style={{
+                boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
+                backgroundColor: '#f40',
+                color: 'white',
+                padding: '1rem',
+              }}
+            >
+              Our Creative Stories
+            </h1>
+          </div>
         </div>
         <div style={{ 'margin': 'auto', 'width': '95%', "textAlign": 'center' }} className="columns">
           <div className="column ">

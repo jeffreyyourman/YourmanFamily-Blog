@@ -22,11 +22,11 @@ const Navbar = class extends React.Component {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
+            navBarActiveClass: 'is-active',
+          })
           : this.setState({
-              navBarActiveClass: '',
-            })
+            navBarActiveClass: '',
+          })
       }
     )
   }
@@ -37,6 +37,7 @@ const Navbar = class extends React.Component {
         className="navbar"
         role="navigation"
         aria-label="main-navigation"
+        style={{ backgroundColor: 'transparent' }}
       >
         <div className="container">
           <div className="navbar-brand">
@@ -58,25 +59,25 @@ const Navbar = class extends React.Component {
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
+            {/* <div className="navbar-start has-text-centered" style={{ color: 'black' }}>
+              
+            </div> */}
+            <div className="navbar-end has-text-centered">
+              <Link className="navbar-item" to="/about" style={{color:'black'}}>
                 About
               </Link>
-              {/* <Link className="navbar-item" to="/products">
+              {/* <Link className="navbar-item" to="/products" style={{color:'black'}}>
                 Products
               </Link> */}
-              <Link className="navbar-item" to="/blog">
+              <Link className="navbar-item" to="/blog" style={{color:'black'}}>
                 Blog
               </Link>
-              <Link className="navbar-item" to="/contact">
+              <Link className="navbar-item" to="/contact" style={{color:'black'}}>
                 Contact
               </Link>
-              {/* <Link className="navbar-item" to="/contact/examples">
+              {/* <Link className="navbar-item" to="/contact/examples" style={{color:'black'}}>
                 Form Examples
               </Link> */}
-            </div>
-            <div className="navbar-end has-text-centered">
-             
             </div>
           </div>
         </div>
